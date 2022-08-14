@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const WelcomeSection = () => {
 };
 
 const IntroSection = () => {
-  let [showContactDetails, setShowContactDetails] = useState(true);
+  let [showContactDetails, setShowContactDetails] = useState(false);
 
   const handleContactDetails = () => {
     setShowContactDetails(true);
@@ -43,7 +43,9 @@ const IntroSection = () => {
         </div>
         <div className={"grid container max-w-xs"}>
           <div
-            className={"w-full border-4 lg:border-8 border-black aspect-auto text-"}
+            className={
+              "w-full border-4 lg:border-8 border-black aspect-auto text-"
+            }
           >
             <Image
               layout={"responsive"}
@@ -90,6 +92,11 @@ const IntroSection = () => {
 };
 
 const Home: NextPage = () => {
+  const skillsSectionRef = useRef<null | HTMLDivElement>(null);
+  const scrollToSkillsSection = () => {
+    skillsSectionRef.current?.scrollIntoView();
+  };
+
   return (
     <div className={"bg-white"}>
       <Head>
@@ -109,7 +116,7 @@ const Home: NextPage = () => {
               "border-t-1 border border-black border-x-0 flex place-content-around px-10"
             }
           >
-            <NavItem title={"My Skills"} />
+            <NavItem onClick={scrollToSkillsSection} title={"My Skills"} />
             <NavItem title={"My Employment"} />
             <NavItem title={"My Education"} />
             <NavItem title={"Download PDF CV"} />
@@ -134,6 +141,7 @@ const Home: NextPage = () => {
           {/*  [Technical Skills/Personal Skills | Employment/Education] */}
           <div className={"grid grid-cols-3 gap-16"}>
             <SkillsSection
+              ref={skillsSectionRef}
               personalSkills={personalSkills}
               technicalSkills={technicalSkills}
             />

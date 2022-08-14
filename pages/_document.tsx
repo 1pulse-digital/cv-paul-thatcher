@@ -6,7 +6,7 @@ class MyDocument extends Document {
     const isDev = process?.env.NODE_ENV === "development";
 
     return (
-      <Html>
+      <Html className={"scroll-smooth"}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
