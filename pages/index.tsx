@@ -92,6 +92,7 @@ const IntroSection = () => {
 };
 
 const Home: NextPage = () => {
+  // Create references to components we want to be able to scroll/navigate to
   const skillsSectionRef = useRef<null | HTMLDivElement>(null);
   const scrollToSkillsSection = () => {
     skillsSectionRef.current?.scrollIntoView();
