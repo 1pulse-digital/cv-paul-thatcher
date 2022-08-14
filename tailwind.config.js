@@ -11,7 +11,7 @@ module.exports = {
         primary: "#000000",
         secondary: "#707070",
         light: "#F7F7F7",
-        accent: "#343434",
+        custom1: "#343434",
       },
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],

@@ -1,17 +1,35 @@
 import React from "react";
 
-export const Button = ({ children }: { children: React.ReactNode }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const Button = (props: ButtonProps) => {
   return (
-    <button className={"border border-black p-2 hover:ring ring-black whitespace-nowrap"}>
-      {children}
+    <button
+      onClick={props.onClick}
+      className={
+        "border border-black p-2 hover:ring ring-black whitespace-nowrap"
+      }
+    >
+      {props.children}
     </button>
   );
 };
 
-export const SecondaryButton = ({ children }: { children: React.ReactNode }) => {
+interface SecondaryButtonProps {
+  children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const SecondaryButton = (props: SecondaryButtonProps) => {
   return (
-    <button className={"p-2 hover:ring ring-black whitespace-nowrap"}>
-      {children}
+    <button
+      onClick={props.onClick}
+      className={"p-2 hover:ring ring-black whitespace-nowrap"}
+    >
+      {props.children}
     </button>
   );
 };

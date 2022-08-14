@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import profileImage from "./paul_thatcher.jpg";
 import { NavItem } from "../components/nav_item";
-import {Button, SecondaryButton} from "../components/button";
+import { Button, SecondaryButton } from "../components/button";
 import { employmentHistory } from "../data/employmentHistory";
 import { educationHistory } from "../data/educationHistory";
 import { technicalSkills } from "../data/technicalSkillls";
@@ -12,6 +12,7 @@ import { personalSkills } from "../data/personalSkills";
 import { SkillsSection } from "../components/skills";
 import { HistorySection } from "../components/history";
 import { LinkedInIcon } from "../components/icons";
+import { ContactDetails } from "../components/contactDetails";
 
 const WelcomeSection = () => {
   return (
@@ -23,8 +24,15 @@ const WelcomeSection = () => {
 };
 
 const IntroSection = () => {
+  let [showContactDetails, setShowContactDetails] = useState(true);
+
+  const handleContactDetails = () => {
+    setShowContactDetails(true);
+  };
+
   return (
     <div className={"container mx-auto"}>
+      <ContactDetails openState={[showContactDetails, setShowContactDetails]} />
       <div
         className={
           "grid lg:grid-cols-3 gap-10 lg:gap-32 mx-auto justify-items-center"
@@ -35,7 +43,7 @@ const IntroSection = () => {
         </div>
         <div className={"grid container max-w-xs"}>
           <div
-            className={"w-full border-4 lg:border-8 border-black aspect-auto"}
+            className={"w-full border-4 lg:border-8 border-black aspect-auto text-"}
           >
             <Image
               layout={"responsive"}
@@ -69,7 +77,7 @@ const IntroSection = () => {
           {/*  Actions buttons "*/}
           <div className={"py-4"}>
             <div className={"flex gap-4 justify-center sm:justify-start"}>
-              <Button>Contact Details</Button>
+              <Button onClick={handleContactDetails}>Contact Details</Button>
               <SecondaryButton>
                 <LinkedInIcon />
               </SecondaryButton>
