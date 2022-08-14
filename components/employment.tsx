@@ -26,10 +26,10 @@ const EmploymentEntry = ({ data: props }: { data: EmploymentHistoryEntry }) => {
       <h4 className={"font-bold mb-2"}>{props.title}</h4>
       <div className={"text-primary text-sm flex gap-2"}>
         <GlobeIcon />
-        <span className={"text-accent"}>{props.company}</span>
+        <span className={"text-custom1"}>{props.company}</span>
         <div />
         <ClockIcon />
-        <span className={"text-accent"}>{props.duration}</span>
+        <span className={"text-custom1"}>{props.duration}</span>
       </div>
       <div className={"text-secondary"}>
         <span>Duties:</span>
