@@ -31,20 +31,20 @@ const IntroSection = () => {
   };
 
   return (
-    <div className={"container mx-auto"}>
+    <div className={"container mx-auto "}>
       <ContactDetails openState={[showContactDetails, setShowContactDetails]} />
       <div
         className={
-          "grid lg:grid-cols-3 gap-10 lg:gap-32 mx-auto justify-items-center"
+          "grid lg:grid-cols-3 gap-10 lg:gap-10 mx-auto justify-items-center"
         }
       >
-        <div className={"lg:hidden grid justify-items-center pt-10"}>
+        <div className={"lg:hidden grid pt-10 "}>
           <WelcomeSection />
         </div>
-        <div className={"grid container max-w-xs"}>
+        <div className={"grid container "}>
           <div
             className={
-              "w-full border-4 lg:border-8 border-black aspect-auto text-"
+              "w-full  aspect-auto "
             }
           >
             <Image
@@ -55,25 +55,32 @@ const IntroSection = () => {
           </div>
         </div>
 
-        <div className={"lg:col-span-2 grid gap-4 sm:gap-10"}>
+        <div className={"lg:col-span-2 grid max-w-prose"}>
           {/* Intro section */}
           <div className={"hidden lg:block"}>
             <WelcomeSection />
           </div>
-          <span className={"text-2xl font-light"}>
+          <span className={"text-2xl font-light pt-4 xl:pt-0"}>
             Director of EPGT and Co-director of Jerusalema
           </span>
+
+          <div className="lg:py-7 xl:py-0">
+            <p>
+              I am a very versatile, and passionate person with a solid
+              background in Entrepreneurship. I enjoy
+              <b> leadership</b>, service roles, <b> archery</b>, gym,
+              philosophy <b> reading</b>, geopolitics and current affairs,
+              psychological self improvements, general knowledge quizzes,
+              military history, astronomy.
+            </p>
+          </div>
 
           {/*  Personal details section | Date of birth etc */}
           <div className={"font-light"}>
             <span>Date of Birth: 21/01/1979</span>
             <br />
             <span>Nationality: South African </span>
-            <br />
-            <span>Address: </span>
-            <span className={"font-bold"}>
-              Craighall Park, Johannesburg, 2196
-            </span>
+  
           </div>
 
           {/*  Actions buttons "*/}
@@ -99,48 +106,40 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className={"bg-white"}>
+    <div className={"container mx-auto"}>
       <Head>
         <title>Curriculum Vitae | Paul Thatcher</title>
         <meta name="description" content="An online CV for Paul Someone" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={"py-4 sm:py-10 grid gap-10"}>
-        <div className={"px-4 sm:px-10 lg:px-12 grid gap-10"}>
+      <main className={"py-4 sm:py-10 grid gap-10 "}>
+        <div className={"px-4 sm:px-10 lg:px-12 grid gap-10 "}>
           {/* Intro section */}
           <IntroSection />
 
           {/*  Navbar */}
           <div
             className={
-              "border-t-1 border border-black border-x-0 flex place-content-around px-10"
+              "border-t-1 border border-black border-x-0 flex place-content-around px-10 "
             }
           >
             <NavItem onClick={scrollToSkillsSection} title={"My Skills"} />
-            <NavItem title={"My Employment"} />
-            <NavItem title={"My Education"} />
-            <NavItem title={"Download PDF CV"} />
+            <NavItem onClick={scrollToSkillsSection} title={"My Employment"} />
+            <NavItem onClick={scrollToSkillsSection} title={"My Education"} />
+            <NavItem
+              onClick={scrollToSkillsSection}
+              title={"Download PDF CV"}
+            />
           </div>
         </div>
 
         {/*  Content section */}
-        <div className={"grid gap-10"}>
+        <div className={"grid gap-10 "}>
           {/* Profile intro */}
-          <div className={"text-center mx-auto max-w-prose"}>
-            <h2 className={"text-2xl mb-5"}>Profile</h2>
-            <p>
-              I am a very versatile, and passionate person with a solid
-              background in Entrepreneurship. I enjoy
-              <b> leadership</b>, service roles, <b> archery</b>, gym,
-              philosophy <b> reading</b>, geopolitics and current affairs,
-              psychological self improvements, general knowledge quizzes,
-              military history, astronomy.
-            </p>
-          </div>
 
           {/*  [Technical Skills/Personal Skills | Employment/Education] */}
-          <div className={"grid grid-cols-3 gap-16"}>
+          <div className={"grid grid-cols-3 gap-10"}>
             <SkillsSection
               ref={skillsSectionRef}
               personalSkills={personalSkills}

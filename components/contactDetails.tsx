@@ -17,11 +17,11 @@ export const ContactDetails = (props: ContactDetailsProps) => {
       {/* The backdrop, rendered as a fixed sibling to the panel container */}
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
-      <div className="fixed inset-0 flex items-center justify-center p-4">
-        <Dialog.Panel className="w-full max-w-md rounded bg-custom1 text-white text-3xl">
-          <Dialog.Title>personemail@mail.com</Dialog.Title>
+      <div className="fixed inset-0 flex items-center justify-center p-4 ">
+        <Dialog.Panel className="w-full max-w-md p-20 text-3xl text-white rounded bg-custom1">
+          <Dialog.Title>paul@jerusalema.co.za</Dialog.Title>
           <Dialog.Description>
-            <span>+27 71 382 47824</span>
+            <span><br/>+27 83 411 3922</span>
           </Dialog.Description>
         </Dialog.Panel>
       </div>
