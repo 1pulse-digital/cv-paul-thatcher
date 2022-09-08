@@ -127,10 +127,10 @@ const Home: NextPage = () => {
             <NavItem onClick={scrollToSkillsSection} title={"My Skills"} />
             <NavItem onClick={scrollToSkillsSection} title={"My Employment"} />
             <NavItem onClick={scrollToSkillsSection} title={"My Education"} />
-            <NavItem
+            {/* <NavItem
               onClick={scrollToSkillsSection}
               title={"Download PDF CV"}
-            />
+            /> */}
           </div>
         </div>
 
