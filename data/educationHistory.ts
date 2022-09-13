@@ -29,7 +29,7 @@ export const educationHistory: EducationHistoryEntry[] = [
   {
     title: "Matric",
     institution: "St. Stithians College",
-    duration: "1993 - 1997",
+    duration: "1992 - 1996",
     items: ["Completed matric with academic honours and distinctions."],
   },
 ];
